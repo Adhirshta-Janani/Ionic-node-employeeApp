@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -24,6 +24,7 @@ import { EmployeeServiceProvider } from '../providers/employee-service/employee-
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -39,7 +40,8 @@ import { EmployeeServiceProvider } from '../providers/employee-service/employee-
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EmployeeServiceProvider
+    EmployeeServiceProvider,
+    HttpClient
   ]
 })
 export class AppModule {}

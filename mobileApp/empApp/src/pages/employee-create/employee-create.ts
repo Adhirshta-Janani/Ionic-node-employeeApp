@@ -28,7 +28,7 @@ export class EmployeeCreatePage {
     console.log('ionViewDidLoad EmployeeCreatePage');
   }
 
-  summit(){
+  submit(){
     var employeeDetails = {
       name: this.employeeName,
       email: this.email,

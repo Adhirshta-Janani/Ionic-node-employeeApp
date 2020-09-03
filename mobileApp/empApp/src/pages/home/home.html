@@ -15,8 +15,7 @@
         <ion-col style="text-align:center;" col-3 no padding>
           <ion-item>
             <ion-avatar item-start>
-              <img src="../assets/imgs/person2.jpeg">
-              <p style="text-align:center;">{{item.designation}}</p>
+              <img src="../assets/imgs/person.jpg">
             </ion-avatar>
           </ion-item>
           
@@ -26,7 +25,7 @@
             <ion-col>
               <ion-row>
                 <ion-col>
-                  {{item.firstName}}
+                  {{item.name}}
                 </ion-col>
               </ion-row>
               <ion-row>
@@ -36,7 +35,7 @@
               </ion-row>
               <ion-row>
                 <ion-col style="padding-top:0%;"class="font">
-                  {{item.cellPhone}}
+                  {{item.mobile}}
                 </ion-col>
               </ion-row>
             </ion-col>
@@ -47,7 +46,7 @@
          
           left: 108%;
           font-size: 140%;">
-            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            <ion-icon ios="ios-trash" md="md-trash" (click)="delete(item.employee_id)"></ion-icon>
           
           </ion-item>
           

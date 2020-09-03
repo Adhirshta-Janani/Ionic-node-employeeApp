@@ -18,7 +18,7 @@ export class EmployeeServiceProvider {
   }
 
   getEmployeeDetails(): Observable<any> {
-    return this.http.get(this.url + "employee/all");
+    return this.http.get(this.url + "employee/all/get");
   }
 
   addEmployeeDetails(data:any): Observable<any> {

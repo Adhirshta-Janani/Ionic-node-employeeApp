@@ -20,8 +20,9 @@ export class HomePage {
    this.EmployeeProvider.getEmployeeDetails().subscribe(data => {
     if (data.success) {
       console.log("success");
-      this.employees = [data.employeeDetails];
+      this.employees = data.data;
       console.log(this.employees);
+      console.log(data);
     }
   })
 
@@ -34,6 +35,7 @@ export class HomePage {
   delete(id:any){
 
     var employee_id = id;
+    console.log(id);
     this.EmployeeProvider.deleteEmployeeDetails(employee_id).subscribe(data=>{
       if(data.success){
 

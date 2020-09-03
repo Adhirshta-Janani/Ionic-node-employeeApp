@@ -77,29 +77,17 @@ app.post('/register/user', (req, res) => {
 
 //get employee details
 
-app.get('/employee/:id', (req, res) => {
-  
-  const employee_id = req.params.id;
-  let sql = 'SELECT * FROM employee where employee_id = ?';
-  let query = db.query(sql, [employee_id],(err, result, fields) => {
-    // res.send({ success: true, todolist: result });
-    res.json({ 
-      success: true,
-      employeeDetails: result,
-      msg: 'Details on its way...' });
-  });
-});
 
 
 //get all employee details
-app.get('/employee/all', (req, res) => {
+app.get('/employee/all/get', (req, res) => {
   
   let sql = 'SELECT * FROM employee';
   let query = db.query(sql,(err, result, fields) => {
     // res.send({ success: true, todolist: result });
-    res.json({ 
+    res.send({ 
       success: true,
-      employeeDetails: result,
+      data: result,
       msg: 'Details on its way...' });
   });
 });
@@ -134,7 +122,7 @@ app.put('/employee/update/:employee_id', (req, res) => {
 app.delete('/employee/delete/:id', (req, res) => {
   
   let sql = 'DELETE FROM employee WHERE employee_id = ? ; ';
-  let query = db.query(sql[req.params.id], (err, result, fields) => {
+  let query = db.query(sql,[req.params.id], (err, result, fields) => {
     res.send({ success: true });
   });
 });
